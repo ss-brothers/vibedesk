@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #0ff;
+  --color-neon-magenta: #f0f;
+  --color-neon-green: #0f0;
+  --color-scifi-bg: #050b14;
+  --color-scifi-panel: rgba(10, 20, 35, 0.7);
+  --color-scifi-border: rgba(0, 255, 255, 0.3);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--color-scifi-bg);
+  color: #e0e0e0;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-neon-magenta); }
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.4), 1px -1px 0 rgba(255,255,255,0.4), -1px 1px 0 rgba(255,255,255,0.4), 1px 1px 0 rgba(255,255,255,0.4), 0 0 5px var(--color-neon-green), 0 0 15px var(--color-neon-green), 0 0 30px var(--color-neon-green);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.typewriter-effect {
+  overflow: hidden;
+  border-right: .15em solid var(--color-neon-magenta);
+  white-space: nowrap;
+  animation: 
+    typing 2s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.animate-flicker {
+  animation: flicker 4s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.font-space { font-family: var(--font-space), monospace; }
+.font-orbitron { font-family: var(--font-orbitron), sans-serif; }
+.font-caveat { font-family: var(--font-caveat), cursive; }
+.font-creepster { font-family: var(--font-creepster), cursive; }
+.font-cinzel { font-family: var(--font-cinzel), serif; }
+.font-press-start { font-family: var(--font-press-start), monospace; }
+.font-chakra { font-family: var(--font-chakra), sans-serif; }
+.font-amatic { font-family: var(--font-amatic), cursive; }
+.font-lora { font-family: var(--font-lora), serif; }
+.font-quicksand { font-family: var(--font-quicksand), sans-serif; }
+.font-rubik-glitch { font-family: var(--font-rubik-glitch), sans-serif; }
+
+.font-nosifer { font-family: var(--font-nosifer), cursive; }
+.font-eater { font-family: var(--font-eater), cursive; }
+.font-rye { font-family: var(--font-rye), cursive; }
+.font-kalam { font-family: var(--font-kalam), cursive; }
+.font-yatra { font-family: var(--font-yatra), cursive; }
+.font-shrikhand { font-family: var(--font-shrikhand), cursive; }
+.font-bangers { font-family: var(--font-bangers), cursive; }
+.font-silkscreen { font-family: var(--font-silkscreen), cursive; }
+.font-uncial { font-family: var(--font-uncial), cursive; }
+
+
+/* Custom Scrollbar for Sci-Fi theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-neon-cyan);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-magenta);
+}
+
